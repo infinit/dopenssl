@@ -8,7 +8,8 @@ env:
 script:
   - cd _build/linux64
   - make tests
-  - make check
+  - ./tests/dopenssl/rand
+#  - ./tests/dopenssl/rsa
   - make sample
   - ./src/sample "chiche donne nous tout"
   - docker build -t ${DOCKER_IMAGE} ../
