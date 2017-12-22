@@ -9,7 +9,7 @@ script:
   - cd _build/linux64
   # - make tests
   # - make check
-  # - make sample
+  - make sample
   - ./src/sample "chiche donne nous tout"
   - docker build -t ${DOCKER_IMAGE} ../
 after_success:
