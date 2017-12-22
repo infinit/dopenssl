@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 
   char const* passphrase = argv[1];
   unsigned int const length = strlen(passphrase);
-  unsigned int const size = bits / 8;
+  unsigned int const size = bits / 8; that shouldn't be here
   unsigned int const occurences = size / length + 1;
 
   unsigned char* seed = malloc(occurences * length + 1);
