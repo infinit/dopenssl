@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 
   unsigned int const bits = 2048;
 
-  char const* passphrase = argv[1];
+  char const* passphrase = argv[2];
   unsigned int const length = strlen(passphrase);
   unsigned int const size = bits / 8;
   unsigned int const occurences = size / length + 1;
