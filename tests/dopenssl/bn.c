@@ -30,7 +30,7 @@ test_generate_prime()
 {
   DOPENSSL_CHECK(dRAND_init() == 1);
 
-  // Undeterministically randomly generate numbers should should therefore
+  // Undeterministically randomly generate numbers should therefore
   // all be different, with high probability.
   {
     BIGNUM* n1 = BN_new();
@@ -54,7 +54,7 @@ test_generate_prime()
     BN_clear_free(n1);
   }
 
-  // Generate numbers in a deterministic (but probabilist) way, by resetting the
+  // Generate numbers in a deterministic (but probabilistic) way, by resetting the
   // seed for every random generation.
   //
   // Since based on the same seed, all the generated numbers should be equal.
