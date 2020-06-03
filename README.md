@@ -10,13 +10,13 @@
 
 ## Intro
 
-**Disclaimer:** This is the continuation of [Julien Quintard](https://github.com/mycure), where the original project is [https://github.com/infinit/dopenssl](https://github.com/infinit/dopenssl). [Drake](https://github.com/infinit/drake) has been replaced by [CMake](https://cmake.org/) as default build system.
+**Disclaimer:** This is the continuation of the [original implementation](https://github.com/infinit/dopenssl) by [Infinit](https://infinit.sh/). [Drake](https://github.com/infinit/drake) has been replaced by [CMake](https://cmake.org/) as default build system.
 
 The dOpenSSL library extends the OpenSSL Project cryptographic library so as to provide deterministic random generation functionalities. Basically, dOpenSSL guarantees that should a big number or a cryptographic key be generated, given a PRNG's state, the result would be always the same.
 
 The OpenSSL random generator introduces entropy in many places, making it unusable in a deterministic way. Thus, some functions have been cloned and adapted in order to guarantee determinism.
 
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. 
+This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit.
 
 ## Dependencies
 The library relies upon the following libraries:
@@ -39,8 +39,11 @@ $ sudo make install
 ```
 
 ## Example
-The following source code can be copied and pasted in a test file, say `test.c`. This sample shows how dOpenSSL can be used to generate cryptographic keys --- in this case 2048-bit RSA keys --- in a deterministic way i.e based on a given passphrase. The program therefore assures that, given the same passphrase, the
-exact same RSA key will be generated.
+The following source code can be found in `src/sample.c`.
+
+It shows how dOpenSSL can be used to generate cryptographic keys (in this case 2048-bit RSA keys) in a deterministic way i.e based on a given passphrase (seed).
+
+The program therefore assures that, given the same passphrase (seed), the exact same RSA key will be generated.
 
 ```C
 #include <stdio.h>
@@ -103,7 +106,7 @@ int main(int argc, char **argv)
 }
 ```
 
-After installing libdopenssl on your system, do the command below to build this example:
+After installing `libdopenssl` on your system, do the command below to build this example:
 ```
 $ gcc src/sample.c -o sample -ldopenssl -lcrypto
 ```
