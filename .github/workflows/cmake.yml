@@ -19,3 +19,5 @@ jobs:
       run: rm -rf build; mkdir build; cd build; cmake ..
     - name: make
       run: cd build; make
+    - name: make install
+      run: cd build; sudo make install
