@@ -4,8 +4,10 @@ cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 
 project(dopenssl DESCRIPTION "A deterministic implementation of some of the OpenSSL functionalities")
 
-enable_Language(C)
+enable_language(C)
 enable_testing()
+
+option(TEST "Enable tests" OFF)
 
 # Must use GNUInstallDirs to install libraries into correct locations on all platforms.
 include(GNUInstallDirs)
@@ -47,3 +49,18 @@ install(TARGETS dopenssl
     ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
     LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
+
+if(TEST)
+	set(TEST_DIR "tests/dopenssl")
+	add_executable(bn ${TEST_DIR}/bn.c)
+	add_executable(rand ${TEST_DIR}/rand.c)
+	add_executable(rsa ${TEST_DIR}/rsa.c)
+
+	target_include_directories(bn PRIVATE ${TEST_DIR})
+	target_include_directories(rand PRIVATE ${TEST_DIR})
+	target_include_directories(rsa PRIVATE ${TEST_DIR})
+
+	target_link_libraries(bn dopenssl crypto)
+	target_link_libraries(rand dopenssl crypto)
+	target_link_libraries(rsa dopenssl crypto)
+endif()
