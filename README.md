@@ -1,5 +1,7 @@
 # dOpenSSL
 
+![C/C++ CI](https://github.com/bernardoaraujor/dopenssl/workflows/C/C++%20CI/badge.svg)
+
 **Disclaimer:** This is the continuation of [Julien Quintard](https://github.com/mycure), where the original project is [https://github.com/infinit/dopenssl](https://github.com/infinit/dopenssl). [Drake](https://github.com/infinit/drake) has been replaced by [CMake](https://cmake.org/) as default build system.
 
 The dOpenSSL library extends the OpenSSL Project cryptographic library so as to provide deterministic random generation functionalities. Basically, dOpenSSL guarantees that should a big number or a cryptographic key be generated, given a PRNG's state, the result would be always the same.
