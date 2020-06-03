@@ -150,6 +150,10 @@ publicExponent:
 
 Note that you should get exactly the same output since dOpenSSL guarantees the result is deterministic.
 
+## References
+- [*The Mathematics of the RSA Public-Key Cryptosystem*](http://www.mathaware.org/mam/06/Kaliski.pdf). Burt Kaliski. **RSA Laboratories**.
+- [*How does RSA work?*](https://hackernoon.com/how-does-rsa-work-f44918df914b). Jeronimo (Jerry) Garcia. **Hackernoon**.
+
 ## Maintainers
  * Website: https://about.me/bernardo_ar
  * Email: bernardoaraujor@gmail.com
