@@ -26,8 +26,8 @@ jobs:
     - name: build fuzzied sample
       run: afl-gcc src/sample.c -o sample -ldopenssl -lcrypto
     - name: create afl setup
-      run: mkdir -p afl/in; mkdir -p afl/out; sh -c 'cat /dev/urandom |tr -dc A-Z9|head -c${1:-81} >> afl/1'; sh -c 'cat /dev/urandom |tr -dc A-Z9|head -c${1:-81} >> afl/2'; sh -c 'cat /dev/urandom |tr -dc A-Z9|head -c${1:-81} >> afl/3';
+      run: mkdir -p afl/in; mkdir -p afl/out; echo 'XXBVB9NJTG9CPAJWXRUPEDDQHHSVGABJ9QNPODASDTHZCPWCQBHCDUIPRGLDKWWZPROEFSEFPGBNUIRFO' > afl/in/1; echo 'LR9HS9SSZS9NWDSFWEPZWSAJLQBAHMOHPFKJK9EUGPETWQHATGLLAMZVQWIXOOTUQDWFKVGZ9NOYSMXKM' > afl/in/2; echo 'DTEUYHCINNRXCLXGUGN9SPLTHXEIYBEMTASKN9MZIJE9AWUTXDAALILLBWOJGIREPP9YAKSDBTYJXZWFL' > afl/in/3;
     - name: modify core_pattern kernel parameter
       run: sudo sh -c 'echo core >/proc/sys/kernel/core_pattern'
     - name: run afl-fuzz
-      run: afl-fuzz -i afl/in -o afl/out2 ./sample
+      run: afl-fuzz -i afl/in -o afl/out ./sample
