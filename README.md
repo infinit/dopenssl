@@ -31,8 +31,8 @@ $ sudo apt-get install libssl1.0-dev -y
 Assuming you're on Ubuntu 18.04:
 
 ```
-$ git clone http://github.com/bernardoaraujor/dopenssl-ng
-$ cd dopenssl-ng
+$ git clone http://github.com/bernardoaraujor/dopenssl
+$ cd dopenssl
 $ mkdir build; cd build
 $ cmake ..; make
 $ sudo make install
