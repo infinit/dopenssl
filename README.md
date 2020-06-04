@@ -6,6 +6,7 @@
 - [Dependencies](#dependencies)
 - [Clone, Build, Install](#clone--build--install)
 - [Example](#example)
+- [References](#references)
 - [Maintainers](#maintainers)
 
 ## Intro
@@ -152,7 +153,7 @@ Note that you should get exactly the same output since dOpenSSL guarantees the r
 
 ## References
 - [*The Mathematics of the RSA Public-Key Cryptosystem*](http://www.mathaware.org/mam/06/Kaliski.pdf). Burt Kaliski. **RSA Laboratories**.
-- [*How does RSA work?*](https://hackernoon.com/how-does-rsa-work-f44918df914b). Jeronimo (Jerry) Garcia. **Hackernoon**.
+- [*How does RSA work?*](https://hackernoon.com/how-does-rsa-work-f44918df914b) Jeronimo (Jerry) Garcia. **Hackernoon**.
 
 ## Maintainers
  * Website: https://about.me/bernardo_ar
