@@ -5,6 +5,8 @@
 #include <dopenssl/rsa.h>
 #include <dopenssl/rand.h>
 
+#include <test>
+
 int main(int argc, char **argv)
 {
   if (argc != 2)
